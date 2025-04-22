@@ -1,0 +1,63 @@
+
+-- Create the database
+CREATE DATABASE scse_event_management;
+USE scse_event_management;
+
+-- Create the events table
+CREATE TABLE events (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    event_name VARCHAR(255) NOT NULL,
+    event_date DATE NOT NULL,
+    event_time TIME NOT NULL,
+    club VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+-- Create the participants table
+CREATE TABLE participants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    rollNumber VARCHAR(20) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phoneNumber VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+
+
+
+-- adding admin to database--
+INSERT INTO admin (name, email, password) 
+VALUES ('Admin Name', 'admin@example.com', 'admin123');
+
+
+INSERT INTO admin (name, email, password) 
+VALUES ('Siddhant', 'siddhant@gmail.com', 'sid123');
+
+INSERT INTO admin (name, email, password) 
+VALUES ('Kaif', 'kaif@gmail.com', 'kaif123');
+
+
+
+
+
+CREATE TABLE participants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    rollNumber VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    phoneNumber VARCHAR(15) NOT NULL
+);
+
+
+
+
+
+<button class="register-btn" onclick="window.location.href='event_register.html'">Register Now</button>
